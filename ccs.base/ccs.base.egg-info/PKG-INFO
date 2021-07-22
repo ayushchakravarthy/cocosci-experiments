@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: ccs.base
+Version: 0.1.0
+Summary: A simple Intergenerational Goods Game with no social comparison
+Home-page: https://github.com/ayushchakravarthy/ccs.base
+Author: Ayush Chakravarthy
+Author-email: akchakravarthy@ucdavis.edu
+License: MIT
+Keywords: Dallinger base
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
+Provides-Extra: test
+
+# base
+
+A simple Intergenerational Goods Game with no social comparison
+
+This is an example Dallinger experiment. You can run or test it after
+[installing Dallinger](https://dallinger.readthedocs.io/en/latest/installing_dallinger_for_users.html)
+or using a
+[Vagrant virtual machine](https://dallinger.readthedocs.io/en/latest/vagrant_setup.html).
+This experiment contains a `Vagrantfile` which will setup a Linux virtual machine
+with Dallinger installed for testing and running this experiment.
+
+You can import and run it from a python prompt or script:
+
+    from dallinger.experiments import base
+    exp = base()
+    exp.run(mode=u'debug', vebose=True)
+
+You can also run the experiment from the experiment directory using the
+dallinger command line:
+
+    dallinger debug
+
+
+# Change Log
+
+## v0.1.0 (2017-04-10)
+
+- Initial release.
+
+

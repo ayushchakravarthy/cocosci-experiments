@@ -1,0 +1,6 @@
+setuptools
+
+[test]
+pytest
+selenium
+pexpect
