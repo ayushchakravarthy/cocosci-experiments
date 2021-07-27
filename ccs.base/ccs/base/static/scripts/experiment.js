@@ -6,6 +6,14 @@ $(document).ready(function() {
   // do not allow user to close or reload
   dallinger.preventExit = true;
 
+  var slider = document.getElementById("contrib")
+  var output = document.getElementById("slider_label")
+  output.innerHTML = slider.value
+
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+
   // Print the consent form.
   $("#print-consent").click(function() {
     window.print();
@@ -24,9 +32,13 @@ $(document).ready(function() {
   });
 
   $("#submit-response").click(function() {
+
+    var contrib = $("#contrib").val()
+
     $("#submit-response").addClass('disabled');
     $("#submit-response").html('Sending...');
-    dallinger.createInfo(my_node_id, {contents: "Submitted", info_type: "Info"})
+
+    dallinger.createInfo(my_node_id, {contents: contrib, info_type: "Info"})
     .done(function (resp) {
       dallinger.allowExit();
       dallinger.goToPage('questionnaire');

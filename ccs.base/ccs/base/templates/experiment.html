@@ -3,6 +3,11 @@
 {% block body %}
     <div class="main_div">
         <div id="stimulus">
+            <h2>Contribution Slider</h2>
+            <p>
+                <input type="range" id="contrib" class="slider" min="0" max="100" value="50">
+                <span class="slider_label"></span>
+            </p>
             <h1>Click the button</h1>
             <button id="submit-response" type="button" class="btn btn-primary">Submit</button>
         </div>
@@ -12,5 +17,12 @@
 {% block scripts %}
     <script>
         create_agent();
+        var slider = document.getElementById("contrib")
+        var output = document.getElementById("slider_label")
+        output.innerHTML = slider.value
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
     </script>
 {% endblock %}

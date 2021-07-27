@@ -27,7 +27,6 @@ def extra_parameters():
 
 class IGG(Experiment):
     """Define the structure of the experiment."""
-    num_participants = 1
 
     def __init__(self, session=None):
         """Call the same parent constructor, then call setup() if we have a session.
@@ -35,22 +34,23 @@ class IGG(Experiment):
         super(IGG, self).__init__(session)
 
         self.experiment_repeats = 5
-        self.initial_recruitment_size = 10
+        self.initial_recruitment_size = 1
 
         if session:
             self.setup()
 
-    @classmethod
-    def extra_parameters(cls):
-        config = get_config()
+    # @classmethod
+    # def extra_parameters(cls):
+    #     config = get_config()
 
-        # can extend if needed
-        types = {
-            'num_participants': int
-        }
-        
-        for key in types:
-            config.register(key, types[key])
+    #     # can extend if needed
+    #     types = {
+    #         'custom_var': bool,
+    #         'num_participants': int
+    #     }
+    #     
+    #     for key in types:
+    #         config.register(key, types[key])
 
     def configure(self):
         config = get_config()
