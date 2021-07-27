@@ -6,14 +6,6 @@ $(document).ready(function() {
   // do not allow user to close or reload
   dallinger.preventExit = true;
 
-  var slider = document.getElementById("contrib")
-  var output = document.getElementById("slider_label")
-  output.innerHTML = slider.value
-
-  slider.oninput = function() {
-    output.innerHTML = this.value;
-  }
-
   // Print the consent form.
   $("#print-consent").click(function() {
     window.print();
