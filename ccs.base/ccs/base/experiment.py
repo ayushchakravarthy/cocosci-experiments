@@ -4,7 +4,7 @@ import logging
 
 from dallinger.config import get_config
 from dallinger.experiments import Experiment
-from dallinger.networks import Empty
+from dallinger.networks import Empty, Chain
 try:
     from .bots import Bot
     Bot = Bot
@@ -59,4 +59,4 @@ class IGG(Experiment):
 
     def create_network(self):
         """Return a new network."""
-        return Empty(max_size=self.num_participants)
+        return Chain(max_size=self.num_participants)

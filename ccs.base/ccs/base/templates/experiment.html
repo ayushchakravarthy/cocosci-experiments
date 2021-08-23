@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="static/css/custom.css">
+{% endblock %}
+
 {% block body %}
+<!--
     <div class="main_div">
         <div id="stimulus">
             <h2>Contribution Slider</h2>
@@ -12,17 +17,20 @@
             <button id="submit-response" type="button" class="btn btn-primary">Submit</button>
         </div>
     </div>
+-->
+    <div id='main' style='margin: 100px 0px;'></div>
 {% endblock %}
 
 {% block scripts %}
     <script>
         create_agent();
-        var slider = document.getElementById("contrib")
-        var output = document.getElementById("slider_label")
-        output.innerHTML = slider.value
+        loaded();
+        // var slider = document.getElementById("contrib")
+        // var output = document.getElementById("slider_label")
+        // output.innerHTML = slider.value
 
-        slider.oninput = function() {
-          output.innerHTML = this.value;
-        }
+        // slider.oninput = function() {
+        //   output.innerHTML = this.value;
+        // }
     </script>
 {% endblock %}
