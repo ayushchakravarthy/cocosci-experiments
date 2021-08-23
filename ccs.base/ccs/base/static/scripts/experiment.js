@@ -1,4 +1,6 @@
 var my_node_id;
+// set default value to whatever needed
+var stimulus = 0;
 
 // Consent to the experiment.
 $(document).ready(function() {
@@ -26,6 +28,8 @@ $(document).ready(function() {
     
     $('#submit-response').click(function() {
         var response = $('#slider-response').valueAsNumber;
+
+        stimulus = response;
 
         $('#submit-response').addClass('disabled')
         $('#submit-response').html('Sending...')
@@ -61,9 +65,9 @@ function loaded() {
     var half_thumb_width = 7.5;
     var labels = [0, 5, 10];
     var prompt = "Enter a Contribution using the slider (you must move the slider before submitting)";    
-    var stimulus = "Hello";
+    var pre_stimulus = "The mean from the previous generation: "
 
-    var html = '<div id="response-stimulus">' + stimulus + '</div>';
+    var html = '<div id="response-stimulus">' + pre_stimulus + stimulus + '</div>';
     html += '<div class="response-container" style="position:relative; margin: 0 auto 3em auto; ';
     html += 'width:auto;';
     html += '">';
