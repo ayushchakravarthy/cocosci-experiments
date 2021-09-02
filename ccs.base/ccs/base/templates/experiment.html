@@ -1,36 +1,34 @@
 {% extends "layout.html" %}
-
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="static/css/custom.css">
 {% endblock %}
 
 {% block body %}
-<!--
     <div class="main_div">
         <div id="stimulus">
-            <h2>Contribution Slider</h2>
-            <p>
-                <input type="range" id="contrib" class="slider" min="0" max="100" value="50">
-                <span id="slider_label"></span>
-            </p>
-            <h1>Click the button</h1>
-            <button id="submit-response" type="button" class="btn btn-primary">Submit</button>
+            <h1>The previous generation contribution was:</h1>
+            <div><blockquote id="story"><p>&lt;&lt; loading &gt;&gt;</p></blockquote></div>
+            <button id="finish-reading" type="button" class="btn btn-primary">I'm done reading.</button>
+        </div>
+
+        <div id="response-form" style="display: none;">
+            <h1>Now, indicate your contribution.</h1>
+            <p><b>Note:</b> Your task is to adjust the slider and enter your contribution to the commons.<p>
+            <input type="range" oninput="display(this.value);" class="slider" value="5" min="0" max="10" id="reproduction"></input>
+            <p>Your current contribution is: </p>
+            <span id="value" >5</span>
+            <p></p>
+            <button id="submit-response" type="button" class="submn-btn">Submit response.</button>
         </div>
     </div>
--->
-    <div id='main' style='margin: 100px 0px;'></div>
 {% endblock %}
 
 {% block scripts %}
     <script>
         create_agent();
-        loaded();
-        // var slider = document.getElementById("contrib")
-        // var output = document.getElementById("slider_label")
-        // output.innerHTML = slider.value
+        function display(myValue){
+            document.getElementById("value").innerHTML = myValue;
+        }
 
-        // slider.oninput = function() {
-        //   output.innerHTML = this.value;
-        // }
     </script>
 {% endblock %}
